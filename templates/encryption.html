@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Encryption-Decryption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Start Container -->
+    <div class="container cf">
+
+        <!-- Start Action -->
+        <div class="action">
+
+            <!-- Start Action Bar -->
+            <div class="action-bar">
+                <a href="/enc" class="encryption encryption-active">
+                    <h1>encyption</h1>
+                </a>
+                <a href="/dec" class="decryption">
+                    <h1>decryption</h1>
+                </a>
+            </div>
+            <!-- End Action Bar -->
+
+            <!-- Start Input Form -->
+            <div class="input-form">
+                <form action="/encrypt" method="POST" enctype="multipart/form-data">
+                    <input type="file" class="input-file" name="image" accept="image/*" required>
+                    <input type="password" name="key" class="input-key" placeholder="Enter the key" required>
+                    <button type="submit" class="encrypt-btn">Encrypt</button>
+                </form>
+            </div>
+            <!-- End Input Form -->
+
+            <!-- Start Evaluation Result -->
+            <div class="evaluation-result">
+                <h3 class="mse-score">MSE Score:</h3>
+                {% if encrypt1 %}
+                    <h3 class="score1">{{ mse_value1 }}</h3>
+                {% elif decrypt1 %}
+                    <h3 class="score1">{{ mse_value1 }}</h3>
+                {% else %}
+                    <h3 class="score1">-</h3>
+                {% endif %}
+                <h3 class="psnr-score">PSNR Score:</h3>
+                {% if encrypt1 %}
+                    <h3 class="score2">{{ mse_value3 }}</h3>
+                {% elif decrypt1 %}
+                    <h3 class="score2">{{ mse_value3 }}</h3>
+                {% else %}
+                    <h3 class="score1">-</h3>
+                {% endif %}
+            </div>
+            <!-- End Evaluation Result -->
+
+        </div>
+        <!-- End Action -->
+
+        <!-- Start Display -->
+        <div class="display">
+
+            <!-- Start Header -->
+            <div class="header">
+                <h1 class="title">image result</h1>
+            </div>
+            <!-- End Header -->
+
+            <!-- Start Image Result -->
+            <div class="image-result">
+                <!-- Code to show the en/decrypted image here -->
+                <!-- <img src="image.jpg" alt=""> -->
+                <div class="image-show">
+                    {% if encrypt1 %}
+                        <img src="{{ url_for('static', filename=encrypt1) }}" alt="Encrypted Image">
+                    {% elif decrypt1 %}
+                        <img src="{{ url_for('static', filename=decrypt1) }}" alt="Decrypted Image">
+                    {% else %}
+                        <p>No Image Available</p>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- End Image Result -->
+
+        </div>
+        <!-- End Display -->
+    </div>
+    <!-- End Container -->
+
+</body>
+</html>

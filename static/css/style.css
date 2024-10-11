@@ -1,0 +1,305 @@
+/* CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Micro Clearfix */
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+ .cf:before,
+ .cf:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
+ 
+ /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+ .cf {
+     *zoom: 1;
+ }
+
+ /* Styiling The CSS */
+ body {
+    background-color: #25282F;
+    font-family: arial;
+ }
+
+ .container {
+    background-color: #303030;
+    margin: 50px auto;
+    width: 1090px;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 10px;
+	box-shadow: 2px 2px 10px #282828;
+ }
+
+ .action {
+    width: 400px;
+    height: 568px;
+    float: left;
+    background-color: #363636;
+    border: 3px solid #545454;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 25px;
+ }
+
+ .action-bar {
+    padding: 5px;
+    border: 3px solid #545454;
+    background-color: #303030;
+    border-radius: 5px;
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: -28px;
+ }
+
+ .encryption,
+ .decryption {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 42%;
+    text-align: center;
+    border-radius: 2.5px;
+    text-transform: capitalize;
+    font-size: 18px;
+ }
+ 
+ .encryption-active, 
+ .decryption-active {
+	background-color: #2D70A3;
+ }
+
+ .encryption:hover,
+ .decryption:hover {
+    background-color: #2D70A3;
+    transition: .3s;
+ }
+
+ .input-form {
+    background-color: #545454;
+    margin: 70px auto 50px;
+    width: 75%;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+	box-shadow: 2px 2px 10px #282828;
+ }
+
+ .input-file {
+    background-color: #303030;
+    width: 100%;
+    color: #545454;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+	box-shadow: inset 1px 1px 10px 4px #282828, inset -1px -1px 10px 4px #282828;
+ }
+
+ .input-file[type=file]::file-selector-button {
+    background-color: #2D70A3;
+    color: white;
+    border-radius: 2.5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+ }
+
+ .input-file[type=file]::file-selector-button:hover {
+    background-color: #24669A;
+    transition: .3s;
+ }
+ 
+ .input-key {
+    width: 100%;
+    background-color: #303030;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+	box-shadow: inset 1px 1px 10px 4px #282828, inset -1px -1px 10px 4px #282828;
+ }
+
+ .input-key[type=password] {
+    border: none;
+ }
+
+ .input-key::placeholder {
+    color: #545454;
+ }
+
+ .encrypt-btn {
+    background-color: #2D70A3;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+ }
+
+ .encrypt-btn:hover {
+    background-color: #24669A;
+    transition: .3s;
+ }
+
+ .evaluation-result {
+    background-color: #545454;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px 0;
+    box-sizing: border-box;
+	box-shadow: 2px 2px 10px #282828;
+ }
+
+ .evaluation-result h3 {
+   color: white;
+   text-align: center;
+   line-height: 30px;
+ }
+
+ .score1,
+ .score2 {
+   padding: 5px;
+   background-color: #303030;
+   width: 75%;
+   margin: 0 auto;
+   border-radius: 5px;
+   box-shadow: inset 1px 1px 10px 4px #282828, inset -1px -1px 10px 4px #282828;
+ }
+
+ .score2 {
+   margin-bottom: 8px;
+ }
+
+ .display {
+    width: 600px;
+    height: 615px;
+    float: right;
+    background-color: #363636;
+    border: 3px solid #545454;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 25px;
+ }
+
+ .header {
+    background-color: #303030;
+    border: 3px solid #545454;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+    top: -28px;
+    left: 50px;
+    right: 50px;
+ }
+
+ .title {
+    background-color: #2D70A3;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 2.5px;
+    text-transform: capitalize;
+ }
+
+ .image-result {
+    background-color: #545454;
+    width: 535px;
+    height: 535px;
+    border-radius: 10px;
+    margin: 50px auto;
+	 box-shadow: 2px 2px 10px #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .image-show{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+}
+
+.image-show img{
+   max-width: 80%;
+   max-height: 80%;
+   border-radius: 5px;
+}
+
+.image-show p{
+   color: #fff;
+}
